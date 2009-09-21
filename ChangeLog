@@ -1,0 +1,20 @@
+2008-08-13  version 0.2.3 <alexepico@gmail.com>
+	* Import the entire scim-pinyin phrases as corpus.
+	* Better HMM parameter adjusts.
+	* Better candidates adjusts.
+	* Add version check.
+	* Add data file corruption detection.
+	* Protect against integer overflow.
+
+2008-01-18  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.am (SUBDIRS): Add po.
+	* configure.ac (AC_CONFIG_FILES): Add po/Makefile.in.
+
+2008-01-18  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.am (SUBDIRS): Add po.
+	(ACLOCAL_AMFLAGS): New variable.
+	(EXTRA_DIST): Add config.rpath, m4/ChangeLog.
+	* configure.ac (AC_CONFIG_FILES): Add po/Makefile.in.
+
