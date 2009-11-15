@@ -124,8 +124,8 @@ void WinnerTree::replay(int i){
     m_tree[p] = winner(lc, rc);
     
     //added by wupeng
-    p /= 2;
-    if ( 2 * p + 1 == m_tree_size ){
+    if ( ( p | 0x01 )  == m_tree_size ){
+        p /= 2;
 	m_tree[p] = winner( m_tree[2 * p], m_low_ext + 1 );
     }
     

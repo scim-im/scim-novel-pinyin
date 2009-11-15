@@ -19,7 +19,7 @@
  * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
  * Boston, MA  02111-1307  USA
  *
- * $Id: test_parser.cpp,v 1.10 2008/10/02 05:29:31 alexepico Exp $
+ * $Id$
  *
  */
 

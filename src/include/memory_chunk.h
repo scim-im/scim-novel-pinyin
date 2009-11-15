@@ -237,6 +237,9 @@ public:
 	
 	data_len = fread(data, 1, data_len, file);
 	set_chunk(data, data_len, free);
+        //Fixes memory chunk end. 
+        if ( stat_buf.st_size > data_len )
+          m_allocated = (char *) m_data_begin + stat_buf.st_size;
 	fclose(file);
 	return true;
     }

@@ -8,7 +8,7 @@
  * Copyright (c) 2005 James Su <suzhe@tsinghua.org.cn>
  * Copyright (c) 2008 Peng Wu <alexepico@gmail.com>
  *
- * $Id: novel_pinyin_imengine_setup.cpp,v 1.6 2008/10/02 05:29:31 alexepico Exp $
+ * $Id: novel_pinyin_imengine_setup.cpp,v 1.3 2006/06/12 01:31:14 suzhe Exp $
  *
  */
 

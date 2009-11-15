@@ -7,7 +7,7 @@
  * 
  * Copyright (c) 2005 James Su <suzhe@tsinghua.org.cn>
  *
- * $Id: novel_special_table.cpp,v 1.6 2008/10/02 05:29:31 alexepico Exp $
+ * $Id: novel_special_table.cpp,v 1.1.1.1 2005/01/06 13:31:02 suzhe Exp $
  *
  */
 

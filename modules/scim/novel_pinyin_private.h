@@ -23,7 +23,7 @@
  * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
  * Boston, MA  02111-1307  USA
  *
- * $Id: novel_pinyin_private.h,v 1.6 2008/10/02 05:29:31 alexepico Exp $
+ * $Id: novel_pinyin_private.h,v 1.1.1.1 2005/01/06 13:31:02 suzhe Exp $
  */
 
 #ifndef __NOVEL_PINYIN_PRIVATE_H

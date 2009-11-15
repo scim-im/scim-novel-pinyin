@@ -118,7 +118,7 @@ int main(int argc, char * argv[]){
     phrase_index_load.store(2, store2);
     phrase_index_load.load(2, store2);
 
-    phrase_index_load.get_phrase_item(16870574, item2);
+    phrase_index_load.get_phrase_item(16870555, item2);
     assert( item2.get_phrase_length() == 14);
     assert( item2.get_n_pronunciation() == 1);
 
@@ -129,8 +129,8 @@ int main(int argc, char * argv[]){
     g_free(string);
 
     guint32 delta = 3;
-    phrase_index_load.add_unigram_frequency(16870566, delta);
-    phrase_index_load.get_phrase_item(16870566, item2);
+    phrase_index_load.add_unigram_frequency(16870555, delta);
+    phrase_index_load.get_phrase_item(16870555, item2);
     assert( item2.get_unigram_frequency() == 3);
 
     phrase_index_load.get_phrase_item(16777222, item2);

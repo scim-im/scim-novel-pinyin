@@ -1,3 +1,13 @@
+2009-09-21  version 0.2.5 <alexepico@gmail.com>
+	* Fixes train factor.
+	* Fixes file open/close bug in utils.
+	* Fixes a bug in winner tree, 
+	    which may potentially lower the correct rate.
+	
+2008-10-17  version 0.2.4 <alexepico@gmail.com>
+	* Fix initial load bug.
+	* Update the test case.
+
 2008-08-13  version 0.2.3 <alexepico@gmail.com>
 	* Import the entire scim-pinyin phrases as corpus.
 	* Better HMM parameter adjusts.

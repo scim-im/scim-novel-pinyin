@@ -3,7 +3,7 @@
 
 
 AC_PREREQ(2.60)
-AC_INIT(novel-pinyin, 0.2.3, alexepico@gmail.com)
+AC_INIT(novel-pinyin, 0.2.5, alexepico@gmail.com)
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADER([config.h])
