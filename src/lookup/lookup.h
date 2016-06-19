@@ -82,7 +82,7 @@ public:
 
 class PinyinLookup{
 private:
-#if defined(__GNUC__) && ((__GNUC__ * 100 + __GNUC_MINOR__ ) >= 500)
+#if defined(__GNUC__) && ((__GNUC__ * 100 + __GNUC_MINOR__ ) >= 600)
     static constexpr gfloat bigram_lambda = LAMBDA_PARAMETER;
     static constexpr gfloat unigram_lambda = 1 - LAMBDA_PARAMETER;
 #else

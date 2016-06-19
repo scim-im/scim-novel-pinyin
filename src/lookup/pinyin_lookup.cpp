@@ -33,7 +33,7 @@
 #include "lookup.h"
 #include "winner_tree.h"
 
-#if defined(__GNUC__) && ((__GNUC__ * 100 + __GNUC_MINOR__ ) >= 500)
+#if defined(__GNUC__) && ((__GNUC__ * 100 + __GNUC_MINOR__ ) >= 600)
   constexpr gfloat PinyinLookup::bigram_lambda;
   constexpr gfloat PinyinLookup::unigram_lambda;
 #else
