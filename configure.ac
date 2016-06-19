@@ -29,7 +29,7 @@ AC_SUBST(LIBTOOL_DEPS)
 
 # Check intltool
 IT_PROG_INTLTOOL([0.33.0],[no-xml])
-
+ALL_LINGUAS="zh_CN zh_TW"
 GETTEXT_PACKAGE="novel-pinyin"
 AC_SUBST(GETTEXT_PACKAGE)
 
