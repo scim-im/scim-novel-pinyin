@@ -1,3 +1,7 @@
+2016-06-20  version 0.2.6 <marguerite@opensuse.org>
+	* fix gcc6 c++14: constexpr
+	* fix autotools
+	* fix gtk3
 2009-09-21  version 0.2.5 <alexepico@gmail.com>
 	* Fixes train factor.
 	* Fixes file open/close bug in utils.
