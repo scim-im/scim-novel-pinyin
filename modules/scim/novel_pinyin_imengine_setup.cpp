@@ -297,7 +297,10 @@ static GtkWidget * __widget_ambiguities [PINYIN_AmbLast+1] =
     NULL, NULL, NULL
 };
 
+#if GTK_CHECK_VERSION(2, 12, 0)
+#else
 static GtkTooltips * __widget_tooltips = 0;
+#endif
 
 // Common callbacks
 static void
@@ -350,14 +353,22 @@ __create_setup_window ()
         GtkWidget *hbox;
         GtkWidget *separator;
 
+#if GTK_CHECK_VERSION(2, 12, 0)
+#else
         __widget_tooltips = gtk_tooltips_new ();
+#endif
 
         // Create the Notebook.
         notebook = gtk_notebook_new ();
         gtk_widget_show (notebook);
 
         // Create the input configuration page.
+ 
+#if GTK_CHECK_VERSION(3, 0, 0)
+        vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+#else
         vbox = gtk_vbox_new (FALSE, 0);
+#endif
         gtk_widget_show (vbox);
         gtk_container_add (GTK_CONTAINER (notebook), vbox);
 
@@ -404,7 +415,11 @@ __create_setup_window ()
         gtk_container_set_border_width (GTK_CONTAINER (__widget_dynamic_adjust), 2);
 
         // Save period
+#if GTK_CHECK_VERSION(3, 0, 0)
+        hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+#else
         hbox = gtk_hbox_new (FALSE, 0);
+#endif
         gtk_widget_show (hbox);
         gtk_table_attach (GTK_TABLE (table), hbox, 2, 3, 5, 6,
                             (GtkAttachOptions) (GTK_FILL),
@@ -437,7 +452,11 @@ __create_setup_window ()
         gtk_box_pack_start (GTK_BOX (vbox), separator, FALSE, FALSE, 4);
 
         // Create the pinyin configurations page
+#if GTK_CHECK_VERSION(3, 0, 0)
+        vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+#else
         vbox = gtk_vbox_new (FALSE, 0);
+#endif
         gtk_widget_show (vbox);
         gtk_container_add (GTK_CONTAINER (notebook), vbox);
 
@@ -446,7 +465,11 @@ __create_setup_window ()
         gtk_widget_show (label);
         gtk_notebook_set_tab_label (GTK_NOTEBOOK (notebook), gtk_notebook_get_nth_page (GTK_NOTEBOOK (notebook), 1), label);
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+        hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+#else
         hbox = gtk_hbox_new (FALSE, 0);
+#endif
         gtk_widget_show (hbox);
         gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 4);
 
@@ -514,7 +537,7 @@ __create_setup_window ()
             gtk_table_attach (GTK_TABLE (table), __config_keyboards[i].entry, 1, 2, i, i+1,
                                 (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
                                 (GtkAttachOptions) (0), 0, 0);
-            gtk_entry_set_editable (GTK_ENTRY (__config_keyboards[i].entry), FALSE);
+            gtk_editable_set_editable (GTK_EDITABLE (__config_keyboards[i].entry), FALSE);
 
             __config_keyboards[i].button = gtk_button_new_with_label ("...");
             gtk_widget_show (__config_keyboards[i].button);
@@ -572,45 +595,126 @@ __create_setup_window ()
 
         // Set all tooltips.
 
+#if GTK_CHECK_VERSION(2, 12, 0)
+        gtk_widget_set_tooltip_text (__widget_auto_fill_preedit,
+#else
         gtk_tooltips_set_tip (__widget_tooltips, __widget_auto_fill_preedit,
+#endif
                               _("Fill the preedit string automatically "
-                                "by a smart matching algorithm."), NULL);
+                                "by a smart matching algorithm.")
+#if GTK_CHECK_VERSION(2, 12, 0)  
+#else
+				, NULL
+#endif
+				);
 
+#if GTK_CHECK_VERSION(2, 12, 0)
+        gtk_widget_set_tooltip_text (__widget_always_show_lookup,
+#else
         gtk_tooltips_set_tip (__widget_tooltips, __widget_always_show_lookup,
+#endif
                               _("Lookup table will be always shown "
-                                "when there are any candidate phrases."), NULL);
+                                "when there are any candidate phrases.")
+#if GTK_CHECK_VERSION(2, 12, 0)  
+#else
+				, NULL
+#endif
+				);
 
+#if GTK_CHECK_VERSION(2, 12, 0)
+        gtk_widget_set_tooltip_text (__widget_show_all_keys,
+#else
         gtk_tooltips_set_tip (__widget_tooltips, __widget_show_all_keys,
+#endif
                               _("All inputed keys will be shown, "
                                 "this option is only valid when "
-                                "\"Auto fill preedit\" is checked."), NULL);
+                                "\"Auto fill preedit\" is checked.")
+#if GTK_CHECK_VERSION(2, 12, 0)  
+#else
+				, NULL
+#endif
+				);
 
+#if GTK_CHECK_VERSION(2, 12, 0)
+        gtk_widget_set_tooltip_text (__widget_dynamic_adjust,
+#else
         gtk_tooltips_set_tip (__widget_tooltips, __widget_dynamic_adjust,
+#endif
                               _("Phrase library will be adjusted dynamically "
                                 "according to the inputed contents. "
                                 "The changed part of the phrase library will be "
-                                "stored in the user's local files."), NULL);
+                                "stored in the user's local files.")
+#if GTK_CHECK_VERSION(2, 12, 0)  
+#else
+				, NULL
+#endif
+				);
 
+#if GTK_CHECK_VERSION(2, 12, 0)
+        gtk_widget_set_tooltip_text (__widget_save_period,
+#else
         gtk_tooltips_set_tip (__widget_tooltips, __widget_save_period,
+#endif
                               _("Time period, in seconds, to "
-                                "save the user data."), NULL);
+                                "save the user data.")
+#if GTK_CHECK_VERSION(2, 12, 0)  
+#else
+				, NULL
+#endif
+				);
 
+#if GTK_CHECK_VERSION(2, 12, 0)
+        gtk_widget_set_tooltip_text (__widget_tone,
+#else
         gtk_tooltips_set_tip (__widget_tooltips, __widget_tone,
+#endif
                               _("Tone information will be used "
-                                "in matching the pinyin key."), NULL);
+                                "in matching the pinyin key.")
+#if GTK_CHECK_VERSION(2, 12, 0)  
+#else
+				, NULL
+#endif
+				);
 
+#if GTK_CHECK_VERSION(2, 12, 0)
+        gtk_widget_set_tooltip_text (__widget_incomplete,
+#else
         gtk_tooltips_set_tip (__widget_tooltips, __widget_incomplete,
+#endif
                               _("Pinyin keys which only have the initial part (Sheng Mu) "
-                                "will be allowed. "), NULL);
+                                "will be allowed. ")
+#if GTK_CHECK_VERSION(2, 12, 0)  
+#else
+				, NULL
+#endif
+				);
 
+#if GTK_CHECK_VERSION(2, 12, 0)
+        gtk_widget_set_tooltip_text (__widget_ambiguities [0],
+#else
         gtk_tooltips_set_tip (__widget_tooltips, __widget_ambiguities [0],
+#endif
                               _("The following options control the ambiguous "
                                 "behaviour of the pinyin matching algorithm, "
-                                "useful if the user cannot distinguish between them."), NULL);
+                                "useful if the user cannot distinguish between them.")
+#if GTK_CHECK_VERSION(2, 12, 0)
+#else
+				, NULL
+#endif
+				);
 
         for (i = 0; __config_keyboards [i].key; ++ i) {
+#if GTK_CHECK_VERSION(2, 12, 0)
+            gtk_widget_set_tooltip_text (__config_keyboards [i].entry,
+#else
             gtk_tooltips_set_tip (__widget_tooltips, __config_keyboards [i].entry,
-                                  _(__config_keyboards [i].tooltip), NULL);
+#endif
+                                  _(__config_keyboards [i].tooltip)
+#if GTK_CHECK_VERSION(2, 12, 0)
+#else
+					, NULL
+#endif
+					);
         }
 
         window = notebook;
