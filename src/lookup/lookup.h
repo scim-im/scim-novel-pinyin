@@ -82,9 +82,14 @@ public:
 
 class PinyinLookup{
 private:
+#if defined(__GNUC__) && ((__GNUC__ * 100 + __GNUC_MINOR__ ) >= 500)
+    static constexpr gfloat bigram_lambda = LAMBDA_PARAMETER;
+    static constexpr gfloat unigram_lambda = 1 - LAMBDA_PARAMETER;
+#else
     static const gfloat bigram_lambda = LAMBDA_PARAMETER;
-    static const gfloat unigram_lambda = 1 - LAMBDA_PARAMETER;
-    
+    static const gfloat unigram_lambda = 1 - LAMBDA_PARAMETER;    
+#endif
+
     PhraseItem m_cache_phrase_item;
 protected:
     //saved varibles
