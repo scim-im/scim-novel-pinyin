@@ -17,7 +17,7 @@
 
 MAINTAINERCLEANFILES    = Makefile.in
 
-INCLUDES		= -I$(top_srcdir)/src/include \
+AM_CPPFLAGS		= -I$(top_srcdir)/src/include \
 			  -I$(top_srcdir)/src/storage \
 			  @GLIB2_CPPFLAGS@
 

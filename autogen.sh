@@ -1,13 +1,7 @@
-#!/bin/bash
-
-aclocal
-
-libtoolize --force
-
+#!/bin/sh
 autoheader
-
-automake -a
-
+aclocal
+libtoolize --copy --install
+intltoolize --copy --automake --force
+automake --add-missing --copy --force
 autoconf
-
-./configure --enable-tests

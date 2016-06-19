@@ -22,19 +22,13 @@ AC_PROG_MAKE_SET
 AC_GNU_SOURCE
 
 # Init libtool
-AC_LIBTOOL_WIN32_DLL
 AC_LIBTOOL_DLOPEN
 AC_PROG_LIBTOOL
 AC_LIB_LTDL
 AC_SUBST(LIBTOOL_DEPS)
 
-# Init gettext
-ALL_LINGUAS="zh_CN zh_TW"#"ko ja de fr it"
-AM_GNU_GETTEXT
-
 # Check intltool
-#AC_PROG_INTLTOOL
-IT_PROG_INTLTOOL([0.33], [no-xml])
+IT_PROG_INTLTOOL([0.33.0],[no-xml])
 
 GETTEXT_PACKAGE="novel-pinyin"
 AC_SUBST(GETTEXT_PACKAGE)
@@ -122,9 +116,8 @@ AC_CHECK_HEADER([db.h], [], AC_MSG_ERROR([Cannot find Berkeley DB library versio
 AC_SEARCH_LIBS([db_create], [db], [], AC_MSG_ERROR([Cannot find Berkeley DB library version 4]))
 
 
-AC_CONFIG_FILES([Makefile 
+AC_CONFIG_FILES([Makefile
 		 po/Makefile.in
-		 intl/Makefile
 		 data/Makefile
 		 src/Makefile
                  src/include/Makefile
