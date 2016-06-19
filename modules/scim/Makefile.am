@@ -48,12 +48,11 @@ novel_pinyin_imengine_setup_la_CFLAGS  = @SCIM_GTKUTILS_CFLAGS@ @SCIM_CFLAGS@
 novel_pinyin_imengine_setup_la_CXXFLAGS= @SCIM_GTKUTILS_CFLAGS@ @SCIM_CFLAGS@
 
 novel_pinyin_imengine_setup_la_LDFLAGS = -avoid-version \
-          	                       -rpath $(setupmoduledir) \
-                	                 -module \
-                        	         @LIBTOOL_EXPORT_OPTIONS@ \
-                                	 @SCIM_LIBS@ \
-                                 	@SCIM_GTKUTILS_LIBS@ \
-                                 	@LTLIBINTL@
+					-rpath $(setupmoduledir) \
+					-module \
+					@LIBTOOL_EXPORT_OPTIONS@ \
+					@SCIM_LIBS@ \
+					@SCIM_GTKUTILS_LIBS@ \
 
 moduledir               = @SCIM_MODULEDIR@/IMEngine
 module_LTLIBRARIES      = novel_pinyin.la
@@ -74,12 +73,11 @@ novel_pinyin_la_CFLAGS        = @SCIM_CFLAGS@
 novel_pinyin_la_CXXFLAGS      = @SCIM_CFLAGS@
 
 novel_pinyin_la_LDFLAGS       = -avoid-version \
-      		                    -rpath $(moduledir) \
-        	                  -module \
-                	          @LIBTOOL_EXPORT_OPTIONS@ \
-                        	  @SCIM_LIBS@ \
-	                          @LTLIBINTL@ \
-				  @GLIB2_LDFLAGS@ 
+				-rpath $(moduledir) \
+				-module \
+				@LIBTOOL_EXPORT_OPTIONS@ \
+				@SCIM_LIBS@ \
+				@GLIB2_LDFLAGS@ 
 
 novel_pinyin_la_LIBADD        = libnovel_pinyin.la \
 				../../src/storage/libstorage.la \
