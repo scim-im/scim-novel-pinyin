@@ -52,7 +52,7 @@ novel_pinyin_imengine_setup_la_LDFLAGS = -avoid-version \
 					-module \
 					@LIBTOOL_EXPORT_OPTIONS@ \
 					@SCIM_LIBS@ \
-					@SCIM_GTKUTILS_LIBS@ \
+					@SCIM_GTKUTILS_LIBS@
 
 moduledir               = @SCIM_MODULEDIR@/IMEngine
 module_LTLIBRARIES      = novel_pinyin.la
